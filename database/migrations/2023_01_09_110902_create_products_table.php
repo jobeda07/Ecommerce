@@ -17,13 +17,13 @@ return new class extends Migration
             $table->id();
             $table->string('Product_name');
             $table->string('Product_image');
-            $table->string('Product_price');
+            $table->double('Product_price');
             $table->string('Product_size');
             $table->string('brand');
             $table->string('stock_status');
-            $table->string('category_id');
-            $table->string('subcategory_id');
-            $table->string('product_description');
+            $table->integer('category_id');
+            $table->integer('subcategory_id');
+            $table->text('product_description');
             $table->timestamps();
         });
     }

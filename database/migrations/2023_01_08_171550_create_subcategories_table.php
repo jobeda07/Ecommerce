@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('subcat_name');
             $table->string('subcat_status');
             $table->string('category_id');
-            $table->string('subcat_description');
+            $table->text('subcat_description');
             $table->timestamps();
         });
     }

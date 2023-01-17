@@ -26,6 +26,9 @@ use App\Http\Controllers\backend\DashboardController;
                              //frontend
 Route::get('/',[homeController::class,'home'])->name('home');
 
+                          //
+
+Route::get('/search',[homeController::class,'search'])->name('search');
 
                                        //shoppage
 
@@ -34,9 +37,21 @@ Route::get('shop-page',[shopController::class,'shop_page'])->name('shop.page');
                               //shopdetails
 Route::get('shop-details',[shopController::class,'shop_details'])->name('shop.details');
 
-                           //card
-Route::get('card-page',[cardController::class,'card_page'])->name('card.page');
-Route::get('checkout-page',[cardController::class,'checkout_page'])->name('checkout.page');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -94,3 +109,12 @@ Route::get('Subcategory-delete/{id}',[SubcatController::class,'Subcat_delete'])-
                              
 
 });
+
+
+
+
+                        //    card
+
+
+Route::get('addcart/{id}',[cardController::class,'add_cart_page'])->name('add-cart.page');
+Route::get('cart-view',[cardController::class,'cart_view'])->name('cart.view');

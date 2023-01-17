@@ -16,4 +16,5 @@ class product extends Model
     public function subcat_Relation(){
         return $this->belongsTo(subcategory::class,'subcategory_id','id');
     }
+	
 }

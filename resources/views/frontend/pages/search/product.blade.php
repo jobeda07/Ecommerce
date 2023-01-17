@@ -18,7 +18,7 @@
 
                             <div class="col-lg-4 col-md-4">
                                 <div class="filter__found">
-                                    <!-- <h6><span>{{$products->count()}}</span> Products found for "{{request()->search_key}}"</h6> -->
+                                    <h6><span>{{$products->count()}}</span> Products found</h6>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-3">
@@ -52,7 +52,7 @@
                         @endforeach  
                     </div>
                     <div class="d-flex justify-content-center">
-                    {{$products->links()}}
+                     
                    </div>
                     
                 </div>

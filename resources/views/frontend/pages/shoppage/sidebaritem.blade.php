@@ -97,6 +97,8 @@
                                 </label>
                             </div>
                         </div>
+                        @if(request()->route()->getName()=='shop-page')
+
                         <div class="sidebar__item">
                             <div class="latest-product__text">
                                 <h4>Latest Products</h4>
@@ -162,4 +164,5 @@
                                 </div>
                             </div>
                         </div>
+                        @endif
                     </div>

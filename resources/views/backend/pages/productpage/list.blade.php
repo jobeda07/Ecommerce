@@ -41,7 +41,6 @@
                                             <td>{{$product->brand}}</td>
                                             <td>{{$product->stock_status}}</td>
                                         <td>{{$product->cat_Relation->category_name}}</td>
-                                <td>{{$product->subcat_Relation->subcat_name}}</td>
                                             <td>{{$product->product_description}}</td>
                                             <td><a href="{{route('product.edit',$product->id)}}" class="btn btn-light">Edit</a></td>
                                             <td><a href="{{route('product.delete',$product->id)}}" class="btn btn-primary">Delete</a></td>
