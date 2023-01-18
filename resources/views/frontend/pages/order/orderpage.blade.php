@@ -162,9 +162,9 @@
                 <form action="#">
                     <div class="row">
                         <!-- billingform -->
-                    @include('frontend.pages.Cart.checkout.billingform')
+                    @include('frontend.pages.order.billingform')
                              <!-- order -->
-                    @include('frontend.pages.Cart.checkout.order')
+                    @include('frontend.pages.order.ordersection')
                     </div>
                 </form>
             </div>

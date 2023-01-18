@@ -19,7 +19,7 @@ class cardController extends Controller
         $cart[$id]=[
             'product_name'=>$product->Product_name,
             'product_price'=>$product->Product_price,
-            'product_quantity'=>0,
+            'product_quantity'=>1,
             'subtotal'=>$product->Product_price,
             'image'=>$product->Product_image
         ];  
@@ -30,5 +30,15 @@ class cardController extends Controller
 
     public function cart_view(){
         return view('frontend.pages.Cart.cartpage.cart');
+    }
+
+    public function cart_item_delete($id)
+    {
+       $newCart=session()->get('myCart');
+        unset($newCart[$id]);
+        session()->put('myCart',$newCart);
+
+        //notify()->success('Item deleted from cart.');
+        return redirect()->back();
     }
 }
