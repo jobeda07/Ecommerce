@@ -80,7 +80,10 @@
                             <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
                             <li><a href="{{route('cart.view')}}"><i class="fa fa-shopping-bag"></i> <span>{{session()->has('myCart')?count(session()->get('myCart')):0}}</span></a></li>
                         </ul>
-                        <div class="header__cart__price">item: <span>$150.00</span></div>
+                        <div class="header__cart__price">
+                            total:
+                             <span>{{array_sum(array_column(session()->get('myCart'),'subtotal'))}}BDT</span>
+                        </div>
                     </div>
                 </div>
             </div>

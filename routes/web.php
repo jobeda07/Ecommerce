@@ -120,6 +120,7 @@ Route::get('Subcategory-delete/{id}',[SubcatController::class,'Subcat_delete'])-
 Route::get('addcart/{id}',[cardController::class,'add_cart_page'])->name('add-cart.page');
 Route::get('cart-view',[cardController::class,'cart_view'])->name('cart.view');
 Route::get('cart-item-delete/{id}',[cardController::class,'cart_item_delete'])->name('cart.item.delete');
+Route::put('cart-item-update/{id}',[cardController::class,'cart_item_update'])->name('cart.item.update');
 
 
 

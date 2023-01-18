@@ -1,0 +1,25 @@
+<form action="">
+    @csrf
+<input name="product_quantity" type="number" value="{{$cart['product_quantity']}}">
+</form>
+
+
+
+
+
+
+
+
+
+public function cart_item_update(Request $request,$id){
+    $getCart=session()->get('myCart');
+    $product=product::find($id);
+    if($product->quantity>=$request->quantity){
+        $getCart[$id]['product_quantity']=$request->product_quantity;
+        $getCart[$id]['subtotal']=$request->quantity*$getCart[$id]['Product_price'];
+
+        session()->put('myCart',$getCart);
+        return back();
+    }
+    return redirect()->back();
+}

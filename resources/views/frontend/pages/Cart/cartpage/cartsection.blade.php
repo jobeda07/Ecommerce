@@ -14,6 +14,7 @@
                                 </tr>
                             </thead>
                             <tbody>
+                            @if(session()->has('myCart'))
                                 @foreach(session()->get('myCart') as $key=>$cart)
                                 <tr>
                                     <td class="shoping__cart__item">
@@ -24,9 +25,10 @@
                                     {{$cart['product_price']}}
                                     </td>
                                     <td class="shoping__cart__quantity">
+                                        
                                         <div class="quantity">
                                             <div class="pro-qty">
-                                                <input type="text" value="1">
+                                                <input type="text" value="{{$cart['product_quantity']}}">
                                             </div>
                                         </div>
                                     </td>
@@ -40,6 +42,7 @@
                                     </td>
                                 </tr>
                                 @endforeach
+                                @endif
                             </tbody>
                         </table>
                     </div>
@@ -68,8 +71,8 @@
                     <div class="shoping__checkout">
                         <h5>Cart Total</h5>
                         <ul>
-                            <li>Subtotal <span>$454.98</span></li>
-                            <li>Total <span>$454.98</span></li>
+                        
+                            <li>Total <span>{{array_sum(array_column(session()->get('myCart'),'subtotal'))}}BDT</span></li>
                         </ul>
                         <a href="{{route('orderpage')}}" class="primary-btn">PROCEED TO CHECKOUT</a>
                     </div>
