@@ -1,0 +1,11 @@
+<form action="{{ route('change.status.p', $product->id) }}" method="post">
+                                        @csrf
+                                        @method('put')
+                                        @if ($product->stock_status == 1)
+                                            <input type="hidden" name="stock_status" value="1">
+                                            <button type="submit" class="btn btn-success">Active</button>
+                                        @else
+                                            <input type="hidden" name="stock_status" value="0">
+                                            <button type="submit" class="btn btn-primary">Inactive</button>
+                                        @endif
+                                    </form>

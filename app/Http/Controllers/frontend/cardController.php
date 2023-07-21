@@ -16,7 +16,9 @@ class cardController extends Controller
     public function add_cart_page($id){
         $product=product::find($id);
         $currentCart=session()->get('myCart');
-        if(empty($currentCart)){
+
+        if($product){
+               if(empty($currentCart)){
             //case1:add new product to cart
             $cart[$id]=[
                 'product_name'=>$product->Product_name,
@@ -26,10 +28,13 @@ class cardController extends Controller
                 'image'=>$product->Product_image
             ];  
             session()->put('myCart',$cart);
-
-        } if(array_key_exists($id,$currentCart)){
+           return redirect()->back();
+        }
+        }
+        
+       if(array_key_exists($id,$currentCart)){
         //case 2: product exist quantity increase, sub-total
-//  $currentCart[$id]['product_quantity']= $currentCart[$id]['product_quantity']+1    ;
+          //  $currentCart[$id]['product_quantity']= $currentCart[$id]['product_quantity']+1    ;
 
        ++$currentCart[$id]['product_quantity'];
          $currentCart[$id]['subtotal']=$currentCart[$id]['product_quantity']*$currentCart[$id]['product_price'];
@@ -50,28 +55,7 @@ class cardController extends Controller
        //notify()->success('Product added to cart.');
        return redirect()->back();
     }
-
     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     public function cart_item_delete($id)
     {

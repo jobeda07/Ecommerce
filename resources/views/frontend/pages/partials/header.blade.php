@@ -82,7 +82,7 @@
                         </ul>
                         <div class="header__cart__price">
                             total:
-                             <span>{{array_sum(array_column(session()->get('myCart'),'subtotal'))}}BDT</span>
+                             {{-- <span>{{array_sum(array_column(session()->get('myCart'),'subtotal'))}}BDT</span> --}}
                         </div>
                     </div>
                 </div>

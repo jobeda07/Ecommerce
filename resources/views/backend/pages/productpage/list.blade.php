@@ -19,6 +19,7 @@
                                             <th scope="col">Image</th>
                                             <th scope="col">Price</th>
                                             <th scope="col">Size</th>
+                                            <th scope="col">Quantity</th>
                                             <th scope="col">Brand</th>
                                             <th scope="col">Stock status</th>
                                             <th scope="col">Category</th>
@@ -38,8 +39,17 @@
                                             </td>
                                             <td>{{$product->Product_price}}</td>
                                             <td>{{$product->Product_size}}</td>
+                                            <td>{{$product->Product_quantity}}</td>
                                             <td>{{$product->brand}}</td>
-                                            <td>{{$product->stock_status}}</td>
+                                            <td>
+                                                @if($product->stock_status==1)
+                            <a href="{{route('change.status.p',$product->id)}}" class="btn btn-success">Active</a>
+                                                @else
+                                                    <a href="{{route('change.status.p',$product->id)}}" class="btn btn-primary">Inactive</a>
+
+                                                
+                                                @endif
+                                                </td>
                                         <td>{{$product->cat_Relation->category_name}}</td>
                                             <td>{{$product->product_description}}</td>
                                             <td><a href="{{route('product.edit',$product->id)}}" class="btn btn-light">Edit</a></td>

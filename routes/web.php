@@ -102,6 +102,7 @@ Route::get('Subcategory-delete/{id}',[SubcatController::class,'Subcat_delete'])-
  Route::get('product-edit/{id}',[productController::class,'product_edit'])->name('product.edit');
  Route::put('product-update/{id}',[productController::class,'product_update'])->name('product.update');
  Route::get('product-delete/{id}',[productController::class,'product_delete'])->name('product.delete');
+ Route::get('change-status/product/{id}',[productController::class,'change_status_p'])->name('change.status.p');
 
 
 

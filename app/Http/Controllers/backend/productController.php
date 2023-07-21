@@ -32,6 +32,7 @@ class productController extends Controller
             'Product_image'=>$fileName,
             'Product_price'=>$request->Product_price,
             'Product_size'=>$request->Product_size,
+            'Product_quantity'=>$request->Product_quantity,
             'brand'=>$request->brand,
             'stock_status'=>$request->stock_status,
             'category_id'=>$request->category_id,
@@ -61,6 +62,7 @@ class productController extends Controller
         'Product_image'=>$fileName,
         'Product_price'=>$request->Product_price,
         'Product_size'=>$request->Product_size,
+        'Product_quantity'=>$request->Product_quantity,
         'brand'=>$request->brand,
         'stock_status'=>$request->stock_status,
         'category_id'=>$request->category_id,
@@ -77,5 +79,23 @@ class productController extends Controller
         $product->delete();
         return back();
         
+    }
+
+    public function change_status_p($id){
+     $getstatus=product::select('stock_status')->where('id',$id)->first();
+     
+     if($getstatus->stock_status==1){
+        $stock_status=0;
+    }
+    elseif($getstatus->stock_status==0){
+        $stock_status=1;
+    }
+    else{
+        $stock_status=1;
+    }
+
+     product::where('id',$id)->update(['stock_status'==$stock_status]);
+     
+     return back()->with('message','status updated Successfully');
     }
 }

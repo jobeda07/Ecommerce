@@ -32,6 +32,11 @@
                                 <label for="floatingPassword">Size</label>
                             </div>
                             <div class="form-floating mb-3">
+                                <input type=" " name="Product_quantity" class="form-control" id="floatingInput" value="{{$product_edit->Product_quantity}}"
+                                    placeholder=" size">
+                                <label for="floatingPassword">Quantity</label>
+                            </div>
+                            <div class="form-floating mb-3">
                                 <input type="text" value="{{$product_edit->brand}}" name="brand" class="form-control" id="floatingInput"
                                     placeholder="Brand">
                                 <label for="floatingPassword">Brand</label>

@@ -11,7 +11,6 @@
 
 @include('notify::components.notify')      
            
-        <x:notify-messages />
 
     <!-- Button trigger modal -->
 

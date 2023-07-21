@@ -30,13 +30,23 @@
                                 <label for="floatingPassword">Size</label>
                             </div>
                             <div class="form-floating mb-3">
+                                <input type=" " name="Product_quantity" class="form-control" id="floatingInput"
+                                    placeholder=" size">
+                                <label for="floatingPassword">Quantity</label>
+                            </div>
+                            <div class="form-floating mb-3">
                                 <input type="text" name="brand" class="form-control" id="floatingInput"
                                     placeholder="Brand">
                                 <label for="floatingPassword">Brand</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="text" name="stock_status" class="form-control" id="floatingInput"
-                                    placeholder="Stock-status">
+                                {{-- <input type="text" name="stock_status" class="form-control" id="floatingInput"
+                                    placeholder="Stock-status"> --}}
+                                    <select class="form-select" name="stock_status" id="">
+                                        <option value="" selected> select one</option>
+                                        <option value="1"> Active</option>
+                                        <option value="0"> Inactive</option>
+                                    </select>
                                 <label for="floatingInput">Stock status</label>
                             </div>
                                      <!-- Category -->

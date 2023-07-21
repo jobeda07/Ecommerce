@@ -19,8 +19,9 @@ return new class extends Migration
             $table->string('Product_image');
             $table->double('Product_price');
             $table->string('Product_size');
+            $table->string('Product_quantity');
             $table->string('brand');
-            $table->string('stock_status');
+            $table->integer('stock_status');
             $table->integer('category_id');
             $table->integer('subcategory_id');
             $table->text('product_description');
